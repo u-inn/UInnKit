@@ -1,7 +1,7 @@
 # Set your parameters in the following
 PROJECT_NAME = 'UInnKit'
 
-#REPO_NAME = 'uinn-spec'
+REPO_NAME = nil #'uinn-spec'
 
 USE_LIBRARIES = false
 
