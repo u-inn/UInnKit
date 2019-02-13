@@ -1,0 +1,11 @@
+# Set your parameters in the following
+PROJECT_NAME = 'UInnKit'
+
+#REPO_NAME = 'uinn-spec'
+
+USE_LIBRARIES = false
+
+SOURCES = [
+	'https://github.com/CocoaPods/Specs.git', 
+        'https://github.com/aliyun/aliyun-specs.git',
+]

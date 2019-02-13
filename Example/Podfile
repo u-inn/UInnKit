@@ -1,0 +1,15 @@
+use_frameworks!
+
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/aliyun/aliyun-specs.git'
+
+platform :ios, '9.3'
+
+target 'UInnKit_Example' do
+  pod 'UInnKit', :path => '../'
+
+  target 'UInnKit_Tests' do
+    inherit! :search_paths
+    
+  end
+end

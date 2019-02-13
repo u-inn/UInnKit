@@ -1,0 +1,95 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+import "Paramsfile"
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+
+ENV["FASTLANE_SKIP_UPDATE_CHECK"] = "1"
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Increase PodSpecs version of bump type: major, minor, patch"
+  desc "Samples: fastlane ios release_pod type:major"
+  desc "Samples: fastlane ios release_pod version:x.x.x"
+  lane :release_pod do |options|
+    target_repo    = REPO_NAME
+    target_project = PROJECT_NAME
+    target_version = options[:version]
+    bump_type = options[:type]
+    spec_path = "#{target_project}.podspec"
+    sources = SOURCES
+    use_libraries = USE_LIBRARIES
+  
+    # git pull
+    git_pull 
+
+    # 确认是 master 分支
+    ensure_git_branch
+
+    # 确认所有都已经提交
+    ensure_git_status_clean
+
+    # 检查对于 tag 是否已经存在
+    if target_version && git_tag_exists(tag: target_version)
+      UI.user_error!("tag '#{target_version}' already exists")
+    end
+
+    # 验证 spec 文件
+    pod_lib_lint(
+	sources: sources,
+	use_libraries: use_libraries,
+	allow_warnings: true)
+
+    # 修改 spec 为即将发布的版本
+    if ["patch", "minor", "major"].include? bump_type
+      target_version = version_bump_podspec(path: spec_path, bump_type: bump_type)
+    else
+      target_version = version_bump_podspec(path: spec_path, version_number: target_version)
+    end
+    UI.message("Bump podspec version to '#{target_version}'")
+
+    # 提交代码到远程仓库
+    git_add(path: '.')
+    git_commit(path: '.', message: "[CI] Bump podspec version to '#{target_version}'")
+    push_to_git_remote
+
+    # 添加 tag
+    add_git_tag(tag: target_version)
+
+    # 提交 tag
+    push_git_tags
+
+    # 检查是否传了 repo 参数
+    if target_repo
+      # pod repo push 'target_repo' 'spec_path'
+      pod_push(sources: sources, 
+		path: spec_path, 
+		repo: target_repo, 
+		use_libraries: use_libraries,
+		allow_warnings: true)
+    else
+      # pod trunk push 'spec_path'
+      pod_push(sources: sources, 
+	path: spec_path, 
+	use_libraries: use_libraries,
+	allow_warnings: true)
+    end
+  end
+end
+
+
+
