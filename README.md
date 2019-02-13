@@ -1,6 +1,5 @@
 # UInnKit
 
-[![CI Status](https://img.shields.io/travis/Theo Chen/UInnKit.svg?style=flat)](https://travis-ci.org/Theo Chen/UInnKit)
 [![Version](https://img.shields.io/cocoapods/v/UInnKit.svg?style=flat)](https://cocoapods.org/pods/UInnKit)
 [![License](https://img.shields.io/cocoapods/l/UInnKit.svg?style=flat)](https://cocoapods.org/pods/UInnKit)
 [![Platform](https://img.shields.io/cocoapods/p/UInnKit.svg?style=flat)](https://cocoapods.org/pods/UInnKit)
@@ -22,7 +21,7 @@ pod 'UInnKit'
 
 ## Author
 
-Theo Chen, me@theochen.com
+Theo Chen, dev@u-inn.cn
 
 ## License
 
