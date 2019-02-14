@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UInnKit'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'Some useful sdks for ios development'
   s.swift_version    = '4.2'
 
