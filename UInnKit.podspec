@@ -37,8 +37,8 @@ Some useful sdks for ios development, currently we provide IAP, Push, Network an
   #   'UInnKit' => ['UInnKit/Assets/*.png']
   # }
 
-  s.source_files = 'UInnKit/Classes/*.swift'
-  #s.public_header_files = 'UInnKit/Classes/*.h'
+  s.source_files = 'UInnKit/Classes/*.{swift,m,h}'
+  s.public_header_files = 'UInnKit/Classes/*.h'
   
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
@@ -46,7 +46,6 @@ Some useful sdks for ios development, currently we provide IAP, Push, Network an
   # 基础模块
   s.subspec 'Utils' do |ss|
       ss.source_files = 'UInnKit/Classes/Utils/**/*.{swift,m,h}'
-    ss.public_header_files = 'UInnKit/Classes/Utils/*.h'
   end
   
   # 内购模块
@@ -57,19 +56,17 @@ Some useful sdks for ios development, currently we provide IAP, Push, Network an
       ss.source_files = 'UInnKit/Classes/IAP/**/*.swift'
   end
   
-  # 推送模块
-  s.subspec 'Push' do |ss|
-    ss.dependency 'RxSwift'
-    ss.dependency 'Alamofire'
-    s.dependency 'Firebase/Core', '~> 5.12.0'
-    s.dependency 'Firebase/Messaging'
-    s.dependency 'AlicloudPush', '~> 1.9.8'
-    ss.dependency 'UInnKit/Utils'
-    
-    ss.source_files = 'UInnKit/Classes/Push/**/*.{swift,m,h}'
-    ss.public_header_files = 'UInnKit/Classes/Push/*.h'
-
-  end
+  # 推送模块, 阿里云，AlicloudPush，不是在pod trunk上的
+  #s.subspec 'Push' do |ss|
+  #  ss.dependency 'RxSwift'
+  #  ss.dependency 'Alamofire'
+  #  ss.dependency 'Firebase/Core', '~> 5.12.0'
+  #  ss.dependency 'Firebase/Messaging'
+  #  ss.dependency 'AlicloudPush', '~> 1.9.8'
+  #  ss.dependency 'UInnKit/Utils'
+  #  ss.source_files = 'UInnKit/Classes/Push/**/*.{swift,m,h}'
+  #  ss.public_header_files = 'UInnKit/Classes/Push/*.h'
+  # end
   
   # 网络模块
   s.subspec 'Network' do |ss|

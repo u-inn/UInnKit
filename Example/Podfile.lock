@@ -1,132 +1,28 @@
 PODS:
   - Alamofire (4.8.1)
-  - AlicloudPush (1.9.8):
-    - AlicloudUT
-    - AlicloudUtils
-  - AlicloudUT (5.2.0.5):
-    - AlicloudUTDID
-  - AlicloudUTDID (1.1.0.19)
-  - AlicloudUtils (1.3.6):
-    - AlicloudUTDID
-  - Firebase/Core (5.12.0):
-    - Firebase/CoreOnly
-    - FirebaseAnalytics (= 5.3.0)
-  - Firebase/CoreOnly (5.12.0):
-    - FirebaseCore (= 5.1.7)
-  - Firebase/Messaging (5.12.0):
-    - Firebase/CoreOnly
-    - FirebaseMessaging (= 3.2.1)
-  - FirebaseAnalytics (5.3.0):
-    - FirebaseCore (~> 5.1)
-    - FirebaseInstanceID (~> 3.3)
-    - GoogleAppMeasurement (~> 5.3)
-    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
-    - GoogleUtilities/MethodSwizzler (~> 5.2)
-    - GoogleUtilities/Network (~> 5.2)
-    - "GoogleUtilities/NSData+zlib (~> 5.2)"
-    - nanopb (~> 0.3)
-  - FirebaseAnalyticsInterop (1.1.0)
-  - FirebaseCore (5.1.7):
-    - GoogleUtilities/Logger (~> 5.2)
-  - FirebaseInstanceID (3.3.0):
-    - FirebaseCore (~> 5.1)
-    - GoogleUtilities/Environment (~> 5.3)
-    - GoogleUtilities/UserDefaults (~> 5.3)
-  - FirebaseMessaging (3.2.1):
-    - FirebaseAnalyticsInterop (~> 1.1)
-    - FirebaseCore (~> 5.1)
-    - FirebaseInstanceID (~> 3.0)
-    - GoogleUtilities/Environment (~> 5.2)
-    - GoogleUtilities/Reachability (~> 5.2)
-    - Protobuf (~> 3.1)
-  - GoogleAppMeasurement (5.5.0):
-    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
-    - GoogleUtilities/MethodSwizzler (~> 5.2)
-    - GoogleUtilities/Network (~> 5.2)
-    - "GoogleUtilities/NSData+zlib (~> 5.2)"
-    - nanopb (~> 0.3)
-  - GoogleUtilities/AppDelegateSwizzler (5.3.7):
-    - GoogleUtilities/Environment
-    - GoogleUtilities/Logger
-    - GoogleUtilities/Network
-  - GoogleUtilities/Environment (5.3.7)
-  - GoogleUtilities/Logger (5.3.7):
-    - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (5.3.7):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/Network (5.3.7):
-    - GoogleUtilities/Logger
-    - "GoogleUtilities/NSData+zlib"
-    - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (5.3.7)"
-  - GoogleUtilities/Reachability (5.3.7):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (5.3.7):
-    - GoogleUtilities/Logger
-  - nanopb (0.3.901):
-    - nanopb/decode (= 0.3.901)
-    - nanopb/encode (= 0.3.901)
-  - nanopb/decode (0.3.901)
-  - nanopb/encode (0.3.901)
-  - Protobuf (3.6.1)
   - RxAtomic (4.4.1)
   - RxSwift (4.4.1):
     - RxAtomic (~> 4.4)
-  - UInnKit (0.1.0):
-    - AlicloudPush (~> 1.9.8)
-    - Firebase/Core (~> 5.12.0)
-    - Firebase/Messaging
-    - UInnKit/IAP (= 0.1.0)
-    - UInnKit/Network (= 0.1.0)
-    - UInnKit/Push (= 0.1.0)
-    - UInnKit/Utils (= 0.1.0)
-  - UInnKit/IAP (0.1.0):
+  - UInnKit (0.1.1):
+    - UInnKit/IAP (= 0.1.1)
+    - UInnKit/Network (= 0.1.1)
+    - UInnKit/Utils (= 0.1.1)
+  - UInnKit/IAP (0.1.1):
     - Alamofire
-    - AlicloudPush (~> 1.9.8)
-    - Firebase/Core (~> 5.12.0)
-    - Firebase/Messaging
     - RxSwift
     - UInnKit/Utils
-  - UInnKit/Network (0.1.0):
+  - UInnKit/Network (0.1.1):
     - Alamofire
-    - AlicloudPush (~> 1.9.8)
-    - Firebase/Core (~> 5.12.0)
-    - Firebase/Messaging
     - RxSwift
     - UInnKit/Utils
-  - UInnKit/Push (0.1.0):
-    - Alamofire
-    - AlicloudPush (~> 1.9.8)
-    - Firebase/Core (~> 5.12.0)
-    - Firebase/Messaging
-    - RxSwift
-    - UInnKit/Utils
-  - UInnKit/Utils (0.1.0):
-    - AlicloudPush (~> 1.9.8)
-    - Firebase/Core (~> 5.12.0)
-    - Firebase/Messaging
+  - UInnKit/Utils (0.1.1)
 
 DEPENDENCIES:
   - UInnKit (from `../`)
 
 SPEC REPOS:
-  https://github.com/aliyun/aliyun-specs.git:
-    - AlicloudPush
-    - AlicloudUT
-    - AlicloudUTDID
-    - AlicloudUtils
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - Firebase
-    - FirebaseAnalytics
-    - FirebaseAnalyticsInterop
-    - FirebaseCore
-    - FirebaseInstanceID
-    - FirebaseMessaging
-    - GoogleAppMeasurement
-    - GoogleUtilities
-    - nanopb
-    - Protobuf
     - RxAtomic
     - RxSwift
 
@@ -136,24 +32,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  AlicloudPush: 3bdd90f69af50562275483b5157571f0a7c50a19
-  AlicloudUT: 5e6a87a56c08ca72c6711beec2449e1c254728ef
-  AlicloudUTDID: 79f509c3e997ef85fe307f8bfb2bb3be27f7e205
-  AlicloudUtils: 9047114c9c1854205ae26db58264bf1555242ffb
-  Firebase: 9190018e296139d938b99521cde0c15a6e8d2946
-  FirebaseAnalytics: 63202d2665de4e6adcbdce189135255d8b5962ba
-  FirebaseAnalyticsInterop: e5f21be9af6548372e2f0815834ff909bff395a2
-  FirebaseCore: 027d350adc039aa5483357c6f56556f117c5170e
-  FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
-  FirebaseMessaging: 0f14a264b0d7f867e8eff5d3556bc5d0d4e57888
-  GoogleAppMeasurement: 621f3bc6211d5ba548debe01fafad30cf5ab6859
-  GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
-  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   RxAtomic: f8d6adc1ccb87a767811269e4875887bc74dbf19
   RxSwift: 92fcf68dfef21f3e2ab1965363d9e7b3d787597e
-  UInnKit: e0512626df6e798a58ce9c9872f9bc973db4a867
+  UInnKit: 1f58bbea5e06f9f5d581f5740a47de5749bf034c
 
-PODFILE CHECKSUM: cea7e078765669a48922cbd9e86f2be51cc82440
+PODFILE CHECKSUM: 3628087699be2122bcf797d56f51516e16ea6381
 
 COCOAPODS: 1.6.0.beta.2
